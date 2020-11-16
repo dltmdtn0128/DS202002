@@ -30,24 +30,29 @@ public class Main {
 			rear = (rear+1)%n;
 			// 랜덤 숫자 10000 큐에 넣음
 		}
-
+		for(int i=0; i<n; i++) {
+			System.out.println(queue[i]);
+		}
+		System.out.print('\n');
 	
 			// 스택이 비어있거나 스택 최상위 숫자가 큐에서 꺼낸 숫자보다 클때 
-			for(int i=0; i<n; i++) {
-				if(queue[front] > stack[i]) {
-					stack[top]=queue[front];
-					queue[rear]=stack[i];
-					rear=(rear+1)%n;
-					top--;
-				}
-				else if(queue[front] < stack[i]) {
-					queue[front] = queue[rear];
-					front=(front+1)%n;
-					rear=(rear+1)%n;
-				}
+		
+		
+		while(front != rear) {
+			if (queue[front] > stack[top] || top == -1) {
+				stack[top] = queue[front];
+				front=(front+1)%n;
+				top++;
+			}
+			else if (queue[front]<stack[top]) {
+				stack[top] = queue[rear];
+				top--;
+				rear=(rear-1)%n;
+			}
+
 			}
 			for(int i=0; i<n; i++) {
-				System.out.println(stack[i]);
+				System.out.println(queue[i]);
 			}
 	}
 	
