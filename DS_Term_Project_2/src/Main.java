@@ -17,8 +17,6 @@ public class Main {
 		for(int i = 0; i<n; i++) {
 			data[i] = ra.nextInt(n);
 		}
-		t1= System.currentTimeMillis() - t1;
-		long t2 = System.currentTimeMillis();
 		for(int i = 0; i<k; i++) {
 			int a = ra.nextInt(k);
 			int b = ra.nextInt(k);
@@ -30,9 +28,8 @@ public class Main {
 				result+= (smallest+biggest);	
 			}	
 		}
-		t2=System.currentTimeMillis() - t2;
+		t1=System.currentTimeMillis() - t1;
 		System.out.println("result = "+result);
 		System.out.println("elapsed time for N : "+t1+" ms.");
-		System.out.println("elapsed time for K : "+t2+" ms.");
 	}
 }
